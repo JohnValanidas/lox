@@ -21,6 +21,7 @@ public class GenerateAst {
                 "Binary   : Expr lhs, Token operator, Expr rhs",
                 "Grouping : Expr expression",
                 "Literal  : Object value",
+                "Logical  : Expr lhs, Token operator, Expr rhs",
                 "Unary    : Token operator, Expr rhs",
                 "Variable : Token name"
         ));
@@ -28,8 +29,10 @@ public class GenerateAst {
         defineAst(outputDir, "Stmt", Arrays.asList(
                 "Block      : List<Stmt> statements",
                 "Expression : Expr expression",
+                "If         : Expr condition, Stmt thenBranch, Stmt elseBranch",
                 "Print      : Expr expression",
-                "Var        : Token name, Expr initializer"
+                "Var        : Token name, Expr initializer",
+                "While      : Expr condition, Stmt body"
         ));
     }
     private static void defineAst(
